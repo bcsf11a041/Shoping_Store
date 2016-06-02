@@ -1,0 +1,45 @@
+﻿@model List<onlineShoppingStore.Models.cart>
+@{
+    ViewBag.Title = "CheckOut";
+}
+@{
+    Layout = "~/Views/Shared/_Layout_customer.cshtml";
+}
+
+          <h3>Thank You for Shopping!  </h3>
+        <br/><br/><br/>
+         <div>            
+      
+  
+     
+                       @foreach(var v in Model)
+                       {
+                             <tr>
+                                 <th>Sr No</th>        
+                                 <th >Item Number</th>
+                                  <th>Description</th>
+                                   <th>Price</th>
+        
+                              </tr>
+                         <tr>
+
+                            
+                            <td width="100px" align="center">@v.Id <br/></td>        
+                            <td width="300px" align="center">@v.productId<br/></td>
+                             <td width="200px" align="center">@v.productType<br/></td>
+
+                             <td width="100px" align="center">Rs.@v.price/=<br/></td>
+                         </tr>  
+                        }
+                       
+                       <tr>
+                            <td width="100px" colspan="3" align="right"> Total</td>
+                           <td align="center" width="100px"> Rs.@ViewBag.x/= </td>      
+                          
+                      <tr>
+    
+
+        </table>
+        </div>
+   
+

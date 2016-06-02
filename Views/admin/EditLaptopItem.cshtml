@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "EditLaptopItem";
+}
+@model onlineShoppingStore.Models.laptop
+@{ Layout = "~/Views/Shared/_Layout_admin.cshtml";
+ }
+
+        <section id="content">
+			<div class="main">
+				<div class="indent-left">
+					<div class="wrapper">          
+        
+        
+          <article class="col-1">
+							<h3>Add Items</h3>
+							
+                        <!--<form id="contact-form" method ="post" action="#" enctype="multipart/form-data">-->
+								<fieldset  >
+									<label>
+                                             <form id="contact-form" method ="post" action="/admin/UpdateLaptopConfirmed/@Model.Id" enctype="multipart/form-data"><label><input type="text" name="itemNum" value=@Model.itemNum /></label><label><input type="text" name="desc" value=@Model.desc /></label><label><input type="text" name="price" value=@Model.price_ /></label><label><input type="file" name="image" value=@Model.image /></label><div class="buttons-wrapper"><input type="submit" class="button" value ="Save!" /></div></form>
+
+                                    </label>
+                                    <fieldset id="d1"> </fieldset>
+                                  
+                                   
+                                    
+								</fieldset>
+							<!--</form>-->
+
+
+						</article>
+        
+                 
+                  
+                        </div>
+				</div>
+			</div>
+		</section>
+	<!--==============================footer=================================-->
+		
+		<script type="text/javascript"> Cufon.now(); </script>
+

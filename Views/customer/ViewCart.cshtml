@@ -1,0 +1,49 @@
+﻿@model List<onlineShoppingStore.Models.cart>
+@{
+    ViewBag.Title = "ViewCart";
+}
+@{
+    Layout = "~/Views/Shared/_Layout_customer.cshtml";
+}
+        <section id="content">
+			<div class="main">
+                <div id="searchResult"></div> 
+				<div id="il" class="indent-left">
+					<h3>Shopping Cart</h3>
+
+                     &nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;
+                         &nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;                       
+             <table>    
+		 @foreach (var q in Model)
+          {
+            
+        <tr>
+           <td>Product Id: @q.productId</td>
+        </tr>
+        
+        <tr>
+           <td>Product Number: @q.productId</td>
+        </tr>
+        <tr>
+           <td>Customer: @q.user</td>
+        </tr> 
+         <tr>
+           <td>Price: @q.price</td>
+        </tr>  
+              
+        <tr>
+           <td>Type: @q.productType</td>
+        </tr>
+       <tr>
+          <td>--------------------------------</td> 
+       </tr>
+
+
+    }
+         <tr>
+       <td><a class="button" href="/Customer/CheckOut">Check Out</a></td>
+        </tr>  
+</table>
+                    </div>
+                </div>
+		</section>

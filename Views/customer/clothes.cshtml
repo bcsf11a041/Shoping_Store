@@ -1,0 +1,60 @@
+@model List<onlineShoppingStore.Models.clothing>
+@{
+    Layout = "~/Views/Shared/_Layout_customer.cshtml";
+}
+
+	<section id="topic-header">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<h1>Clothes</h1>
+					
+				
+		</div>
+	</section>	
+
+
+
+	<!-- PRODUCTS Start
+    ================================================== -->
+
+	<section id="shop">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9">
+					<div class="products-heading">
+						<h2>NEW PRODUCTS</h2>
+					</div>	<!-- End of /.Products-heading -->
+					<div class="product-grid">
+						<div class="row">
+                            @foreach( var s in Model)
+                            {
+							<div class="col-md-4">
+								<div class="products">
+									<a href="single-product.html">
+										<img class="fancybox"src="@s.image"alt="">
+									</a>
+									<a href="single-product.html">
+										<h4>@s.itemNum</h4>
+									</a>
+									<p class="price">From: @s.price</p>
+									<a class="view-link shutter" href="/customer/AddClothesToCart/@s.Id">
+										<i class="fa fa-plus-circle"></i>Add To Cart</a>
+								</div>	<!-- End of /.products -->
+							</div>	<!-- End of /.col-md-4 -->
+                            }
+
+
+
+							
+						</div>	<!-- End of /.row -->
+					</div>	<!-- End of /.products-grid -->
+
+					<!-- Pagination -->
+
+					
+
+
+	
+	
+	<a id="back-top" href="#"></a>

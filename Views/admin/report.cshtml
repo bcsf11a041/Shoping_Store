@@ -1,0 +1,57 @@
+﻿
+@model List<onlineShoppingStore.Models.report>
+@{ 
+    Layout = "~/Views/Shared/_Layout_admin.cshtml";
+ }
+@{
+    ViewBag.Title = "Report";
+}
+@Scripts.Render("~/bundles/jquery")
+<section id="topic-header">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<h1>Report</h1>
+					
+				</div>	<!-- End of /.col-md-4 -->
+				
+			</div>	<!-- End of /.row -->
+		</div>	<!-- End of /.container -->
+	</section>	<!-- End of /#Topic-header -->
+
+
+
+	<!-- PRODUCTS Start
+    ================================================== -->
+
+	<section id="shop">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9">
+					<div class="products-heading">
+						<h2>NEW PRODUCTS</h2>
+					</div>	<!-- End of /.Products-heading -->
+					<div class="product-grid">
+						<div class="row">
+                            @foreach( var s in Model)
+                            {
+							<div class="col-md-4">
+								<div class="products">
+									<a href="single-product.html">
+										<img class="fancybox"src="@s.Id"alt="">
+									</a>
+									<a href="single-product.html">
+										<h4>@s.userName</h4>
+									</a>
+									<p class="price">Price: @s.bill</p>
+									<p class="date">Date: @s.date</p>
+							
+								</div>	<!-- End of /.products -->
+							</div>	<!-- End of /.col-md-4 -->
+                            }
+
+
+
+							
+						</div>	<!-- End of /.row -->
+					</div>	<!-- End of /.products-grid -->

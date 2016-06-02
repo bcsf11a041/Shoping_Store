@@ -1,0 +1,80 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout_customer.cshtml";
+}
+@{
+    ViewBag.Title = "Search";
+}
+   <script type="text/javascript">
+       $(document).ready(function () {
+           $('#type').change(function () {
+
+
+               var id = $('#type').val();
+               var value1 = $("#p1").val();
+               var value2 = $("#p2").val();
+               $.getJSON("/Customer/SearchThings?id=" + id + "&min=" + value1 + "&max=" + value2, function ( data) {
+                   if (data) {
+                       $.each(data, function(idx, item){
+                           $('#d2').append('<p>' + item.Id + '</p>' + '<p>' + item.itemNum + '</p>' + '<p>' + item.desc + '</p>' + '<p>' + item.price + '</p>' + '<img src=' + item.image + '/>');
+                           if (id == 1)
+                           {
+                               $('#d2').append('<a class="button" href =' + "/customer/AddMobileToCart/" + item.Id + '>Add to Cart</a>');
+                           }
+                           else if (id == 2) {
+                               $('#d2').append('<a class="button" href =' + "/customer/AddDesktopToCart/?id=" + item.Id + '>Add to Cart</a>');
+                           }
+                           else if (id == 3) {
+                               $('#d2').append('<a class="button" href =' + "/customer/AddLaptopToCart/?id=" + item.Id + '>Add to Cart</a>');
+                           }
+                           else if (id == 4) {
+                               $('#d2').append('<a class="button" href =' + "/customer/AddFootWearToCart/?id=" + item.Id + '>Add to Cart</a>');
+                           }
+                           else if (id == 5) {
+                               $('#d2').append('<a class="button" href =' + "/customer/AddClothesToCart/?id=" + item.Id + '>Add to Cart</a>');
+                           }
+                       })
+                   }
+                   else {
+                       $("#d2").text("Selected search no results");
+                   }
+               });
+           });
+       });
+    </script>
+    
+
+	<body id="page4">	                
+        <section id="content">
+			<div class="main">
+				<div class="indent-left">
+					<div class="wrapper">          
+        
+        
+          <article class="col-1">
+							<h3>Search </h3>
+								<fieldset>
+									<label>
+                                      Price From:<input type="text" name="lowerprice" id="p1" />
+                                       Price To:<input type="text" name="upperprice" id="p2" />
+                                            <select id ="type"> 
+                                                <option value="0">Select Type</option>
+                                                <option value="1">Mobile</option>
+                                                <option value="2">Desktop</option>
+                                                <option value="3">Laptop</option>
+                                                <option value="4">FootWear</option>
+                                                <option value="5">Clothing</option>
+                                            
+                                            </select>
+                                        <div id ="d2">                                    
+                                        </div>
+                                    </label>
+						</article>
+        
+                 
+                  
+                        </div>
+				</div>
+			</div>
+		</section>
+		<script type="text/javascript"> Cufon.now(); </script>
+	</body>

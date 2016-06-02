@@ -1,0 +1,32 @@
+﻿@model  List<onlineShoppingStore.Models.footWear>
+@{
+    Layout = "~/Views/Shared/_Layout_admin.cshtml";
+}
+
+
+<h3>Delete and Update Foot Wear</h3>
+    
+ 
+    <table>
+        <tr>
+        <td>Id</td>
+        <td>Item Number</td>
+        <td>image</td>
+        <td> Description</td>
+        <td>price</td>
+            </tr>
+        @foreach(var s in Model)
+        {
+           <tr>
+         <td></td>
+        <td>@s.Id</td>
+        <td>@s.itemNum</td>
+        <td>@s.image</td>
+        <td>@s.desc</td>
+        
+        <td>@s.price</td>
+         <td><a href="/admin/EditFootwearItem/@s.Id">Edit</a></td>
+        <td><a href="/admin/DeleteFootwearItem/@s.Id">Delete</a></td>
+            </tr>
+        }
+    </table>

@@ -1,0 +1,71 @@
+﻿@model onlineShoppingStore.Models.login
+@{
+    ViewBag.Title = "login";
+}
+
+@section register
+{
+       <script src="~/Scripts/jquery.validate.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+}
+
+
+ <script>
+
+         $(document).ready(function () {
+             $('#b1').on('click', function () {
+
+                 var userName = $('#user').val();
+                 $.getJSON("/Home/CheckUserName?user=" + userName, function (data) {
+
+                     if (data == true) {
+
+                         $('#result').text("UserName is not available");
+
+                     }
+                     else {
+
+                         $('#result').text("UserName is available");
+                     }
+                 });
+
+             });
+
+         });
+    </script>
+
+    
+     @using (Html.BeginForm("signup", "Home", FormMethod.Post))
+    {
+             @Html.AntiForgeryToken()
+             @Html.ValidationSummary(true)
+ <div>
+
+        <fieldset>
+
+            <legend>Register Form</legend>
+
+            <div class="editor-label">@Html.LabelFor(u=> u.user)</div>
+
+            <div class="editor-field">@Html.TextBoxFor(u => u.user, new { id="user"})
+                 <input type="button" id="b1" value="Check" />
+
+                @Html.ValidationMessageFor(u=> u.user)
+
+            </div>
+             <div id="result"></div>
+
+            <div class="editor-label">@Html.LabelFor(u=> u.password  )</div>
+
+            <div  class="editor-field">@Html.PasswordFor(u=> u.password)
+
+                @Html.ValidationMessageFor(u=> u.password)
+
+            </div>
+
+            <input type="submit" value="Register" />
+
+        </fieldset>
+
+    </div>
+     }

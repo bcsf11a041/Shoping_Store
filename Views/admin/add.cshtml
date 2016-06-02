@@ -1,0 +1,89 @@
+﻿@{
+    ViewBag.Title = "add";
+}
+@{ Layout = "~/Views/Shared/_Layout_admin.cshtml";
+ }
+
+    
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('#type').change(function () {
+                var id = $('#type').val();
+                
+             
+                if (id == 5) {
+                    $('#d1').html('<form id="contact-form" method ="post" action="addLaptop" enctype="multipart/form-data"><label><input type="text" name="itemNum" value="Item NO" onBlur="if(this.value=="") this.value="Item NO"" onFocus="if(this.value =="BItem NO") this.value="" /></label><label><input type="text" name="desc" value="Description" onBlur="if(this.value=="") this.value="Description"" onFocus="if(this.value =="Description" ) this.value=""" /></label><label><input type="text" name="price" value="Price" onBlur="if(this.value=="") this.value="Price"" onFocus="if(this.value =="Price" ) this.value=""" /></label><label><input type="file" name="image" value="Picture" onBlur="if(this.value=="") this.value="Picture"" onFocus="if(this.value =="Picture" ) this.value=""" /></label><div class="buttons-wrapper"><input type="submit" class="button" value ="Save!" /></div></form>');
+
+                }//cook book
+                else if (id == 1) {
+                  
+                    $('#d1').html('<form id="contact-form" method ="post" action="addClothes" enctype="multipart/form-data"><label><input type="text" name="itemNum" value="Item NO" onBlur="if(this.value=="") this.value="Item NO"" onFocus="if(this.value =="Item NO") this.value="" /></label><label><input type="text" name="desc" value="Description" onBlur="if(this.value=="") this.value="Description"" onFocus="if(this.value =="Description" ) this.value=""" /></label><label><input type="text" name="price" value="Price" onBlur="if(this.value=="") this.value="Price"" onFocus="if(this.value =="Price" ) this.value=""" /></label><label><input type="file" name="image" value="Picture" onBlur="if(this.value=="") this.value="Picture"" onFocus="if(this.value =="Picture" ) this.value=""" /></label><div class="buttons-wrapper"><input type="submit" class="button" value ="Save!" /></div></form>');
+                }
+                    //magzine
+                else if (id == 2) {
+                   
+                    $('#d1').html('<form id="contact-form" method ="post" action="addDesktop" enctype="multipart/form-data"><label><input type="text" name="itemNum" value="Item NO" onBlur="if(this.value=="") this.value="Item NO"" onFocus="if(this.value =="BItem NO") this.value="" /></label><label><input type="text" name="desc" value="Description" onBlur="if(this.value=="") this.value="Description"" onFocus="if(this.value =="Description" ) this.value=""" /></label><label><input type="text" name="price" value="Price" onBlur="if(this.value=="") this.value="Price"" onFocus="if(this.value =="Price" ) this.value=""" /></label><label><input type="file" name="image" value="Picture" onBlur="if(this.value=="") this.value="Picture"" onFocus="if(this.value =="Picture" ) this.value=""" /></label><div class="buttons-wrapper"><input type="submit" class="button" value ="Save!" /></div></form>');
+
+
+                }//newsletter
+                else if (id == 3) {
+                   
+                    $('#d1').html('<form id="contact-form" method ="post" action="addFootwear" enctype="multipart/form-data"><label><input type="text" name="itemNum" value="Item NO" onBlur="if(this.value=="") this.value="Item NO"" onFocus="if(this.value =="BItem NO") this.value="" /></label><label><input type="text" name="desc" value="Description" onBlur="if(this.value=="") this.value="Description"" onFocus="if(this.value =="Description" ) this.value=""" /></label><label><input type="text" name="price" value="Price" onBlur="if(this.value=="") this.value="Price"" onFocus="if(this.value =="Price" ) this.value=""" /></label><label><input type="file" name="image" value="Picture" onBlur="if(this.value=="") this.value="Picture"" onFocus="if(this.value =="Picture" ) this.value=""" /></label><div class="buttons-wrapper"><input type="submit" class="button" value ="Save!" /></div></form>');
+
+
+                }
+                else if (id == 4) {
+
+                    $('#d1').html('<form id="contact-form" method ="post" action="addMobile" enctype="multipart/form-data"><label><input type="text" name="itemNum" value="Item NO" onBlur="if(this.value=="") this.value="Item NO"" onFocus="if(this.value =="BItem NO") this.value="" /></label><label><input type="text" name="desc" value="Description" onBlur="if(this.value=="") this.value="Description"" onFocus="if(this.value =="Description" ) this.value=""" /></label><label><input type="text" name="price" value="Price" onBlur="if(this.value=="") this.value="Price"" onFocus="if(this.value =="Price" ) this.value=""" /></label><label><input type="file" name="image" value="Picture" onBlur="if(this.value=="") this.value="Picture"" onFocus="if(this.value =="Picture" ) this.value=""" /></label><div class="buttons-wrapper"><input type="submit" class="button" value ="Save!" /></div></form>');
+
+
+                }
+
+            });
+        });
+    </script>
+	
+		                
+        <section id="content">
+			<div class="main">
+				<div class="indent-left">
+					<div class="wrapper">          
+        
+        
+          <article class="col-1">
+							<h3>Add Items</h3>
+							
+								<fieldset  >
+									<label>
+                                            <select id ="type"> 
+                                            
+                                                <option value="0">Select Type</option>
+                                                <option value="1">Clothes</option>
+                                                <option value="2">Desktop</option>
+                                                <option value="3">Foot Wear</option>
+                                                <option value="4">Mobile</option>
+                                                 <option value="5">Laptop</option>
+                                            </select>
+                                    </label>
+                                    <fieldset id="d1"> </fieldset>
+                                  
+                                   
+                                    
+								</fieldset>
+							<!--</form>-->
+
+
+						</article>
+        
+                 
+                  
+                        </div>
+				</div>
+			</div>
+		</section>
+		
+		<script type="text/javascript"> Cufon.now(); </script>
+
+
